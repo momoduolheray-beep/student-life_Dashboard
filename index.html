@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Life Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Student Life Dashboard</h1>
+      <p>Track your courses and GPA in one place.</p>
+    </div>
+    <button id="theme" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="pill">V1 • Academic Dashboard</span>
+        <h2>Stay on top of your semester.</h2>
+        <p>Add your courses, units and grades to calculate your GPA automatically.</p>
+      </div>
+
+      <div class="stats">
+        <div><b id="courseCount">0</b><small>Courses</small></div>
+        <div><b id="unitCount">0</b><small>Units</small></div>
+        <div><b id="gpa">0.00</b><small>GPA</small></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Add a course</h2>
+      <form id="courseForm">
+        <input id="code" placeholder="Course code" required>
+        <input id="name" placeholder="Course name" required>
+        <input id="units" type="number" min="1" max="10" placeholder="Units" required>
+        <select id="grade" required>
+          <option value="">Grade</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+          <option>E</option>
+          <option>F</option>
+        </select>
+        <button type="submit">Add course</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Your courses</h2>
+      <div id="empty">No courses yet. Add your first course above.</div>
+
+      <div class="tableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Course</th>
+              <th>Units</th>
+              <th>Grade</th>
+              <th>Points</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="courses"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>How GPA works</h2>
+      <p>A = 5, B = 4, C = 3, D = 2, E = 1, F = 0.</p>
+      <p>GPA = total quality points ÷ total units.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
